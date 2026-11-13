@@ -149,6 +149,24 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
 .hero.is-built .stat--l2{transition-delay:.3s}
 .hero.is-built .stat--r2{transition-delay:.45s}
 
+/* картка «Вже відкриті»: справжні заклади Діми, фото змінюються самі */
+.opened{position:absolute;left:var(--pad);bottom:clamp(20px,4vh,40px);z-index:4;display:flex;align-items:center;gap:13px;width:clamp(240px,20vw,300px);padding:10px 16px 10px 10px;text-decoration:none;color:var(--ink);background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.04) 45%,rgba(32,39,57,.22));border:1px solid rgba(255,255,255,.22);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 18px 40px -18px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease-out) .6s,transform .7s var(--ease-out) .6s,border-color .25s}
+.hero.is-built .opened{opacity:1;transform:none}
+.opened:hover{border-color:rgba(250,207,130,.6)}
+.opened__pics{position:relative;flex:none;width:76px;height:76px;border-radius:9px;overflow:hidden;background:#151a26}
+.opened__pics img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(1.06);transition:opacity .9s ease,transform 4s linear}
+.opened__pics img.is-on{opacity:1;transform:scale(1)}
+.opened__text{display:grid;min-width:0;flex:1}
+.opened__label{font-size:12px;color:var(--ink-faint);margin-bottom:3px}
+.opened__item{grid-area:2 / 1;display:grid;opacity:0;transform:translateY(6px);transition:opacity .5s ease,transform .5s var(--ease-out)}
+.opened__item.is-on{opacity:1;transform:none}
+.opened__item b{font:700 15.5px/1.2 var(--sans);color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.opened__item small{font-size:12.5px;line-height:1.3;color:var(--ink-soft);margin-top:2px}
+.opened__dots{grid-area:3 / 1;display:flex;gap:5px;margin-top:8px}
+.opened__dots i{width:14px;height:3px;border-radius:2px;background:rgba(255,255,255,.25);transition:background .3s,width .3s}
+.opened__dots i.is-on{width:22px;background:var(--butter)}
+@media (max-width:1200px){.opened{display:none}}
+
 /* ---------- біжучий рядок ---------- */
 .ticker{background:var(--butter);color:var(--black);overflow:hidden;border-block:1px solid #000;position:relative;z-index:3}
 .ticker__track{display:flex;width:max-content;animation:marquee 38s linear infinite}

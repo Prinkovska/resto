@@ -292,6 +292,25 @@
     modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   }
 
+  /* ---------- перший екран: картка «Вже відкриті», заклади змінюються кожні 4 с ---------- */
+  (function opened() {
+    var box = $('.opened');
+    if (!box) return;
+    var pics = $$('.opened__pics img', box), items = $$('.opened__item', box), dots = $$('.opened__dots i', box);
+    var i = 0, paused = false;
+    function show(k) {
+      [pics, items, dots].forEach(function (list) { list.forEach(function (el, j) { el.classList.toggle('is-on', j === k); }); });
+    }
+    box.addEventListener('mouseenter', function () { paused = true; });
+    box.addEventListener('mouseleave', function () { paused = false; });
+    if (reduceMotion || pics.length < 2) return;
+    setInterval(function () {
+      if (paused || document.hidden) return;
+      i = (i + 1) % pics.length;
+      show(i);
+    }, 4000);
+  })();
+
   /* ---------- етапи: перемикач «приміщення є / шукаю» (міняє лише тексти) ---------- */
   (function premisesSwitch() {
     var reelEl = document.getElementById('etapy');
