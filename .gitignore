@@ -1,0 +1,10 @@
+# вихідники генерацій, резервні копії й чернетки — не для сайту
+media/gen/
+_backup-*/
+_concepts/
+# старі файли, які сайт уже не використовує
+media/Wireframe_*.jpg
+media/steps-first.jpg
+media/steps-scrub.mp4
+media/steps-scrub-mobile.mp4
+media/photos/logo.png
