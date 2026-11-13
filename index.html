@@ -91,7 +91,7 @@
       <ul class="hero__stats" aria-label="Коротко про досвід">
         <li class="stat stat--l1"><b>20+</b><span>закладів</span></li>
         <li class="stat stat--r1"><b>з 2012</b><span>у харчуванні</span></li>
-        <li class="stat stat--l2 stat--rows"><p><b>0%</b><span>роялті</span></p><p><span>заклад</span><b>100%</b><span>ваш</span></p></li>
+        <li class="stat stat--l2 stat--rows"><p><b>0%</b><span>роялті</span></p><p><b>100%</b><span>заклад ваш</span></p></li>
         <li class="stat stat--r2"><b>+1 міс.</b><span>супроводу</span></li>
       </ul>
       <div class="hero__copy">
@@ -417,69 +417,30 @@
         <p class="sec__lead" data-reveal>Ви бачите дві суми: оплату моєї роботи і вкладення в сам заклад. Точну цифру я назву після консультації.</p>
       </header>
 
-      <!-- Ціни з відповідей Діми («у.е.» прочитано як долари). Колонка «Наприклад» — гіпотеза. -->
-      <div class="menu" data-reveal="paper">
-        <div class="menu__title"><span>Меню запусків</span><small>ціни в доларах</small></div>
-        <div class="menu__cols" aria-hidden="true"><span></span><span></span><span>запуск</span><span>вкладення</span><span>разом</span></div>
-        <div class="menu__row">
-          <div class="menu__name"><b>до 20 м²</b><span>кав'ярня, шаурма, крепи</span></div>
-          <i class="menu__dots" aria-hidden="true"></i>
-          <div class="menu__val"><small>запуск</small>$<b data-count="2800">2 800</b></div>
-          <div class="menu__val"><small>вкладення</small>$<b data-count="10000">10 000</b>…<b data-count="18000">18 000</b></div>
-          <div class="menu__val menu__val--sum"><small>разом</small>$<b data-count="12800">12 800</b>…<b data-count="20800">20 800</b></div>
-        </div>
-        <div class="menu__row">
-          <div class="menu__name"><b>20–40 м²</b><span>бургерна, пекарня, суші</span></div>
-          <i class="menu__dots" aria-hidden="true"></i>
-          <div class="menu__val"><small>запуск</small>$<b data-count="3300">3 300</b></div>
-          <div class="menu__val"><small>вкладення</small>$<b data-count="15000">15 000</b>…<b data-count="25000">25 000</b></div>
-          <div class="menu__val menu__val--sum"><small>разом</small>$<b data-count="18300">18 300</b>…<b data-count="28300">28 300</b></div>
-        </div>
-        <div class="menu__row">
-          <div class="menu__name"><b>40–60 м²</b><span>кафе, піцерія</span></div>
-          <i class="menu__dots" aria-hidden="true"></i>
-          <div class="menu__val"><small>запуск</small>$<b data-count="3600">3 600</b></div>
-          <div class="menu__val"><small>вкладення</small>$<b data-count="20000">20 000</b>…<b data-count="40000">40 000</b></div>
-          <div class="menu__val menu__val--sum"><small>разом</small>$<b data-count="23600">23 600</b>…<b data-count="43600">43 600</b></div>
-        </div>
-        <div class="menu__row">
-          <div class="menu__name"><b>60–80 м²</b><span>кафе із залом, паб</span></div>
-          <i class="menu__dots" aria-hidden="true"></i>
-          <div class="menu__val"><small>запуск</small>$<b data-count="4800">4 800</b></div>
-          <div class="menu__val"><small>вкладення</small>$<b data-count="35000">35 000</b>…<b data-count="65000">65 000</b></div>
-          <div class="menu__val menu__val--sum"><small>разом</small>$<b data-count="39800">39 800</b>…<b data-count="69800">69 800</b></div>
-        </div>
-        <div class="menu__row menu__row--last">
-          <div class="menu__name"><b>понад 80 м²</b><span>ресторан</span></div>
-          <i class="menu__dots" aria-hidden="true"></i>
-          <div class="menu__val menu__val--wide">рахую окремо</div>
-        </div>
-        <p class="menu__note">Вкладення орієнтовні: ремонт, обладнання, меблі, перша закупівля. Сума залежить від стану приміщення і формату. У вартість запуску входить усе з розділу «Що я беру на себе» і місяць супроводу.</p>
-      </div>
-
       <!-- Калькулятор-техкарта. Суми беремо тільки з прайсу Діми; «що вже є» не змінює ціну, а йде в заявку. -->
       <form class="calc" id="kalkulyator" novalidate data-form data-calc data-reveal="paper" aria-labelledby="calc-title">
         <input type="hidden" name="source" value="kalkulyator">
         <input type="hidden" name="calc" value="">
         <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="calc__head">
-          <h3 id="calc-title">Техкарта вашого закладу</h3>
-          <span class="calc__no" aria-hidden="true">від <span data-calc-date></span></span>
+          <h3 id="calc-title">Меню запусків</h3>
+          <span class="calc__cur">ціни в доларах</span>
         </div>
-        <p class="calc__lead">Оберіть площу й формат, і ви побачите орієнтовну вартість. Точну цифру скажу після консультації.</p>
+        <p class="calc__lead">Оберіть площу, і справа складеться техкарта вашого закладу. Точну цифру скажу після консультації.</p>
+
+        <fieldset class="calc__tiles">
+          <legend><i>1</i>Площа закладу</legend>
+          <label class="tile"><input type="radio" name="area" value="0" checked><span class="tile__in"><b class="tile__area">до 20 м²</b><span class="tile__ex">кав’ярня, шаурма, крепи</span><span class="tile__fee">$2 800<small>моя робота</small></span><span class="tile__inv">+ $10–18 тис. <small>вкладень</small></span></span></label>
+          <label class="tile"><input type="radio" name="area" value="1"><span class="tile__in"><b class="tile__area">20–40 м²</b><span class="tile__ex">бургерна, пекарня, суші</span><span class="tile__fee">$3 300<small>моя робота</small></span><span class="tile__inv">+ $15–25 тис. <small>вкладень</small></span></span></label>
+          <label class="tile"><input type="radio" name="area" value="2"><span class="tile__in"><b class="tile__area">40–60 м²</b><span class="tile__ex">кафе, піцерія</span><span class="tile__fee">$3 600<small>моя робота</small></span><span class="tile__inv">+ $20–40 тис. <small>вкладень</small></span></span></label>
+          <label class="tile"><input type="radio" name="area" value="3"><span class="tile__in"><b class="tile__area">60–80 м²</b><span class="tile__ex">кафе із залом, паб</span><span class="tile__fee">$4 800<small>моя робота</small></span><span class="tile__inv">+ $35–65 тис. <small>вкладень</small></span></span></label>
+          <label class="tile tile--custom"><input type="radio" name="area" value="4"><span class="tile__in"><b class="tile__area">80+ м²</b><span class="tile__ex">ресторан</span><span class="tile__fee tile__fee--word">рахую окремо</span><span class="tile__inv">під ваш проєкт</span></span></label>
+        </fieldset>
+        <p class="calc__note">Вкладення орієнтовні: ремонт, обладнання, меблі, перша закупівля. Сума залежить від стану приміщення і формату. У вартість моєї роботи входить усе з етапів вище і місяць супроводу.</p>
 
         <div class="calc__grid">
           <div class="calc__inputs">
-            <fieldset class="calc__seg">
-              <legend><i>1</i>Площа закладу</legend>
-              <label><input type="radio" name="area" value="0" checked><span>до 20 м²</span></label>
-              <label><input type="radio" name="area" value="1"><span>20–40 м²</span></label>
-              <label><input type="radio" name="area" value="2"><span>40–60 м²</span></label>
-              <label><input type="radio" name="area" value="3"><span>60–80 м²</span></label>
-              <label><input type="radio" name="area" value="4"><span>понад 80 м²</span></label>
-            </fieldset>
-
-            <label class="calc__select"><span><i>2</i>Формат</span>
+                        <label class="calc__select"><span><i>2</i>Формат</span>
               <select name="format">
                 <option value="кав'ярня">кав'ярня</option>
                 <option value="шаурма / стрітфуд" selected>шаурма / стрітфуд</option>
