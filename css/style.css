@@ -919,3 +919,8 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 
 /* питання: теплий фон, як у блоці «Кому»; іконки-дудли лишаються */
 #pytannia{background:linear-gradient(180deg,#F4E4C9 0%,#EFD7B3 100%)}
+
+/* смуга «Потрібна лише частина?»: фон — фото цегляної стіни замість дудлів */
+.band.band--doodle{background:#E9A866 url("../media/tex/brick-wall.webp") center/cover no-repeat}
+.band--doodle::before{background:linear-gradient(90deg,rgba(250,207,130,.55),rgba(250,207,130,.15) 70%,transparent);opacity:1}
+@media (max-width:760px){.band.band--doodle{background-image:url("../media/tex/brick-wall-m.webp")}}
