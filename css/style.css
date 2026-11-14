@@ -982,7 +982,7 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 
 /* відео етапів v3: сцена менша й по центру кадру з віньєткою — на ноутбуці зсуваємо праворуч, щоб картка зліва її не закривала */
 @media (min-width:821px){
-  .reel__video,.reel__still{left:58%;transform:translate(-50%,-50%);width:min(66%,1200px,calc(100svh * 16 / 9 * .9))}
+  .reel__video,.reel__still{left:60%;transform:translate(-50%,-50%);width:min(76%,1380px,calc(100svh * 16 / 9 * 1.02))}
 }
 /* на телефоні — кадр 4:3 угорі над карткою */
 @media (max-width:820px){
@@ -1001,3 +1001,10 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 .rv__note{margin-top:28px}
 @media (max-width:1180px){.who--reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:820px){.who--reviews{grid-template-columns:minmax(0,1fr)}}
+
+/* етапи: без моноширинних капсів — основний шрифт, звичайні літери */
+.chips li{font:500 14px/1.1 var(--sans);letter-spacing:0;padding:8px 12px}
+.reel__out{font:600 15px/1.45 var(--sans);letter-spacing:0;text-transform:none}
+.reel__nav button{font:500 14.5px/1.1 var(--sans);letter-spacing:0;text-transform:none}
+.reel__count{font:500 14px/1 var(--sans);letter-spacing:.02em}
+.reel__hint{font:500 13px/1 var(--sans);letter-spacing:0;text-transform:none}
