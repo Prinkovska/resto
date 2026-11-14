@@ -962,3 +962,12 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 
 /* Про Дмитра: смуга Telegram ближче до ряду фото (компенсуємо великий проміжок сітки) */
 .about .cta-row--dark{margin-top:calc(28px - clamp(32px,6vw,96px))}
+
+/* «Кому»: шапка чека — кухонна іконка і рукописна позначка столу */
+.who__top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:4px 0 16px}
+.who__top .who__ico{margin:0;width:50px;height:50px}
+.who__ico path.acc{stroke:var(--brick)}
+.who__table{font:600 clamp(20px,1.7vw,23px)/1 "Caveat",cursive;color:var(--brick);transform:rotate(-3deg);white-space:nowrap;text-align:right}
+.who__card h3{text-wrap:wrap}
+.who__card{padding-left:20px;padding-right:18px}
+.who__card h3{font-size:clamp(16.5px,1.35vw,18px)}
