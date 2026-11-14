@@ -252,15 +252,18 @@
   var modal = $('#lead-modal');
   // тексти попапу під різні кнопки; за замовчуванням — первинний прорахунок
   var MODAL_TEXT = {
+    address: { title: 'Підкажу формат для вашого приміщення', lead: 'Залиште ім\'я і телефон. Подивлюся адресу й передзвоню з ідеями, що там спрацює.', btn: 'Отримати підказку', extra: false },
     callback: { title: 'Передзвоню вам', lead: 'Залиште ім\'я і телефон. Передзвоню найближчим часом.', btn: 'Замовити дзвінок', extra: false },
     'hero-relaunch': { title: 'Перезапустимо ваш заклад', lead: 'Розкажіть, що зараз не так. Передзвоню, поставлю кілька питань і скажу, з чого почати.', btn: 'Обговорити перезапуск', extra: true }
   };
   var MODAL_DEFAULT = { title: 'Розкажіть про свою ідею', lead: 'Передзвоню, поставлю кілька питань і скажу, з чого почати.', btn: 'Отримати первинний прорахунок', extra: true };
-  function openModal(source) {
+  function openModal(source, address) {
     if (!modal) return;
     var src = $('input[name="source"]', modal);
     if (src) src.value = source || 'button';
     resetForm(modal);
+    var addr = $('input[name="address"]', modal);
+    if (addr) addr.value = address || '';
     var t = MODAL_TEXT[source] || MODAL_DEFAULT;
     $('#modal-title', modal).textContent = t.title;
     $('.modal__lead', modal).textContent = t.lead;
@@ -284,6 +287,17 @@
       a.addEventListener('click', function (e) { e.preventDefault(); openModal('telegram'); });
     });
   }
+  // поле адреси в блоці «Кому»: адреса переходить у попап разом з ім'ям і телефоном
+  $$('[data-addr]').forEach(function (f) {
+    var inp = f.elements.address;
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var v = inp.value.trim();
+      if (!v) { inp.setAttribute('aria-invalid', 'true'); inp.focus(); return; }
+      openModal('address', v);
+    });
+    inp.addEventListener('input', function () { inp.removeAttribute('aria-invalid'); });
+  });
   $$('[data-todo]').forEach(function (a) {
     a.addEventListener('click', function (e) { e.preventDefault(); });
   });
@@ -430,6 +444,7 @@
         format: (form.elements.format && form.elements.format.value) || '',
         premises: (form.elements.premises && form.elements.premises.value) || '',
         calc: (form.elements.calc && form.elements.calc.value) || '',
+        address: (form.elements.address && form.elements.address.value) || '',
         source: form.elements.source.value,
         page: location.href,
         time: new Date().toISOString()
