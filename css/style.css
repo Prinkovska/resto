@@ -916,3 +916,6 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 .ph--real::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,11,12,.85))}
 .ph--real .ph__cap{z-index:1;color:rgba(255,255,255,.8)}
 .ph--real .ph__cap b{color:#fff}
+
+/* питання: теплий фон, як у блоці «Кому»; іконки-дудли лишаються */
+#pytannia{background:linear-gradient(180deg,#F4E4C9 0%,#EFD7B3 100%)}
