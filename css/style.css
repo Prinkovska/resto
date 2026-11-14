@@ -979,3 +979,25 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 /* штампи-факти про Дмитра: більше повітря між рядками, тягнуться нижче до рівня фото */
 .facts{row-gap:22px;column-gap:14px;margin-top:38px}
 .fact{padding:11px 14px}
+
+/* відео етапів v3: сцена менша й по центру кадру з віньєткою — на ноутбуці зсуваємо праворуч, щоб картка зліва її не закривала */
+@media (min-width:821px){
+  .reel__video,.reel__still{left:58%;transform:translate(-50%,-50%);width:min(66%,1200px,calc(100svh * 16 / 9 * .9))}
+}
+/* на телефоні — кадр 4:3 угорі над карткою */
+@media (max-width:820px){
+  .reel__video,.reel__still{top:96px;height:auto;aspect-ratio:4/3;object-fit:cover;object-position:50% 50%;
+    -webkit-mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%);mask-image:linear-gradient(180deg,transparent 0,#000 12%,#000 80%,transparent 100%)}
+}
+
+/* відгуки: ті самі чеки на рейці, що й у «Кому», 3 в ряд, без нумерації */
+.who--reviews{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:64px;max-width:1100px}
+.rv{min-height:220px;display:flex;flex-direction:column}
+.rv .rv__tag{align-self:flex-end;margin:2px 0 14px}
+.rv .rv__text{font:600 17px/1.45 var(--sans);color:var(--ink-dark);margin-top:0}
+.rv .rv__who{margin-top:auto;padding-top:18px;border-top:1.5px dashed rgba(32,39,57,.22);display:grid;gap:2px;font-size:14px}
+.rv .rv__who b{font-size:15px}
+.rv .tbd{color:var(--brick);font-family:var(--sans);font-size:inherit;white-space:normal}
+.rv__note{margin-top:28px}
+@media (max-width:1180px){.who--reviews{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:820px){.who--reviews{grid-template-columns:minmax(0,1fr)}}
