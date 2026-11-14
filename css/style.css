@@ -893,3 +893,8 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 .hero-contact__btn{justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;background:rgba(255,255,255,.08);color:#F5F3F1;border:1px solid rgba(255,255,255,.26);transition:background .2s,color .2s,border-color .2s,transform .2s}
 .hero-contact__btn--call,.hero-contact__btn--tg{background:rgba(255,255,255,.08);color:#F5F3F1}
 .hero-contact__btn:hover,.hero-contact__btn:focus-visible{filter:none;transform:translateY(-1px);background:var(--butter);border-color:var(--butter);color:var(--black)}
+
+/* Про Діму: заголовок менший, текст більший і щільніший */
+.about__text h2{font-size:clamp(24px,2.7vw,38px);line-height:1.18}
+.about__copy p{font-size:clamp(17px,1.45vw,21px);line-height:1.42;margin-top:12px}
+.about__copy p:first-child{margin-top:22px}
