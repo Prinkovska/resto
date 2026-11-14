@@ -924,3 +924,38 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 .band.band--doodle{background:#E9A866 url("../media/tex/brick-wall.webp") center/cover no-repeat}
 .band--doodle::before{background:linear-gradient(90deg,rgba(250,207,130,.55),rgba(250,207,130,.15) 70%,transparent);opacity:1}
 @media (max-width:760px){.band.band--doodle{background-image:url("../media/tex/brick-wall-m.webp")}}
+
+/* ---------- «Кому»: картки — чеки замовлень на кухонній рейці, кожна на прищепці ---------- */
+.who{position:relative;padding-top:38px;align-items:start;gap:22px;perspective:none}
+.who__rail{position:absolute;left:-14px;right:-14px;top:12px;height:12px;border-radius:6px;z-index:0;
+  background:linear-gradient(180deg,#F2F2F0 0%,#B9BDC2 38%,#8E949B 62%,#C9CDD1 100%);
+  box-shadow:0 6px 10px -4px rgba(60,40,20,.35),inset 0 1px 0 rgba(255,255,255,.8)}
+.who__rail::before,.who__rail::after{content:"";position:absolute;top:-6px;width:10px;height:24px;border-radius:3px;background:linear-gradient(90deg,#8E949B,#D5D8DB,#8E949B)}
+.who__rail::before{left:6px}.who__rail::after{right:6px}
+.who__card{background:#FFFCF5!important;border:0!important;border-radius:2px 2px 0 0;padding:34px 22px 26px;
+  box-shadow:0 22px 30px -20px rgba(80,45,20,.5),0 2px 3px rgba(80,45,20,.08)!important;
+  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;transform-style:flat;transform-origin:50% -24px;z-index:1}
+.who__card[data-reveal]{transform:translateY(-26px) rotate(0deg);transition:opacity .7s var(--ease-out),transform .9s var(--ease-back),box-shadow .3s;transition-delay:calc(var(--d,0) * 110ms)}
+.who__card.is-in,.who__card[data-reveal].is-in{transform:rotate(var(--r,0deg))}
+.who__card.is-in:hover{transform:rotate(calc(var(--r,0deg) * -1.4));transition-delay:0s}
+/* лінія відриву під прищепкою */
+.who__card::before{content:"";position:absolute;left:14px;right:14px;top:18px;border-top:1.5px dashed rgba(32,39,57,.22)}
+/* зубчастий низ, як у відірваного чека */
+.who__card::after{inset:auto 0 -7px 0;height:7px;border-radius:0;opacity:1!important;background:conic-gradient(from 135deg at top,#FFFCF5 90deg,transparent 0) 0 0/14px 7px repeat-x}
+/* дерев'яна прищепка з металевою пружинкою */
+.who__clip{position:absolute;left:50%;top:-30px;width:20px;height:44px;margin-left:-10px;border-radius:4px 4px 3px 3px;z-index:2;
+  background:linear-gradient(90deg,#B98A55 0%,#E2BD88 45%,#C99A62 60%,#A97A47 100%);
+  box-shadow:0 4px 6px -2px rgba(60,35,15,.45),inset 0 0 0 1px rgba(110,70,30,.25)}
+.who__clip::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:rgba(90,55,20,.35)}
+.who__clip::after{content:"";position:absolute;left:-3px;right:-3px;top:15px;height:7px;border-radius:4px;background:linear-gradient(180deg,#E6E8EA,#8E949B);box-shadow:0 1px 2px rgba(0,0,0,.3)}
+.who__ico{margin-top:4px}
+.who__card h3{font-size:18px}
+.who__card p{font-size:15px;line-height:1.5}
+@media (max-width:1180px){
+  .who{row-gap:56px}
+  .who__rail{display:none}
+}
+@media (max-width:820px){
+  .who{padding-top:30px;row-gap:50px}
+}
+@media (prefers-reduced-motion:reduce){.who__card[data-reveal]{transform:rotate(var(--r,0deg))}}
