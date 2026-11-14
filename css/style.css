@@ -971,3 +971,11 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 .who__card h3{text-wrap:wrap}
 .who__card{padding-left:20px;padding-right:18px}
 .who__card h3{font-size:clamp(16.5px,1.35vw,18px)}
+
+/* лого в центрі круглого штампа (сам штамп обертається, лого стоїть рівно) */
+.about__ring-logo{position:absolute;z-index:2;width:80px;height:auto;right:calc(-34px + 85px - 40px);bottom:calc(-34px + 85px - 25px);pointer-events:none}
+@media (max-width:820px){.about__ring-logo{width:60px;right:calc(-10px + 65px - 30px);bottom:calc(-24px + 65px - 18px)}}
+
+/* штампи-факти про Дмитра: більше повітря між рядками, тягнуться нижче до рівня фото */
+.facts{row-gap:22px;column-gap:14px;margin-top:38px}
+.fact{padding:11px 14px}
