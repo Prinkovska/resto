@@ -902,3 +902,17 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 /* плашка зв'язку: компактний квадратик — підпис зверху, іконки під ним */
 .hero-contact{display:grid;grid-template-columns:auto auto;justify-items:center;gap:10px;padding:12px 16px 14px;border-radius:14px}
 .hero-contact__lbl{grid-column:1 / -1;font-size:13.5px}
+
+/* цитата Діми: компактніша, ключові слова жовтим */
+.quote{margin-top:clamp(28px,4vh,44px);padding:clamp(18px,2.4vw,30px) clamp(20px,3vw,40px)}
+.quote p{font-size:clamp(18px,1.8vw,26px);line-height:1.32;max-width:900px}
+.quote mark{background:none;color:var(--butter)}
+.quote .sign{width:min(190px,48vw);margin-top:10px}
+
+/* справжнє фото в ряду медіа: на всю картку, підпис на темному градієнті */
+.ph--real{border:0;background:var(--navy);margin:0}
+.ph--real img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:40% 35%;transition:transform .6s var(--ease-out)}
+.ph--real:hover img{transform:scale(1.04)}
+.ph--real::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(11,11,12,.85))}
+.ph--real .ph__cap{z-index:1;color:rgba(255,255,255,.8)}
+.ph--real .ph__cap b{color:#fff}
