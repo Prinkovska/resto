@@ -402,7 +402,7 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
 .about__frame img{width:100%;height:115%;object-fit:cover;object-position:50% 20%;filter:grayscale(1) contrast(1.15) brightness(.95)}
 .about__frame::after{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(32,39,57,.1),rgba(32,39,57,.75));mix-blend-mode:multiply}
 .about__frame::before{content:"";position:absolute;inset:0;z-index:1;background:var(--butter);mix-blend-mode:color;opacity:.18}
-.about__ring{position:absolute;right:-34px;bottom:-34px;width:170px;height:170px;fill:var(--butter);font:600 13px var(--mono);letter-spacing:.22em;animation:spin 26s linear infinite;background:var(--black);border-radius:50%;padding:6px}
+.about__ring{position:absolute;right:-34px;bottom:-34px;width:170px;height:170px;fill:var(--butter);font:600 13px var(--mono);letter-spacing:0;animation:spin 26s linear infinite;background:var(--black);border-radius:50%;padding:6px}
 @keyframes spin{to{transform:rotate(1turn)}}
 .about__copy p{color:var(--ink-soft);font-size:clamp(16px,1.25vw,18px);margin-top:16px}
 .about__copy p:first-child{margin-top:26px}
