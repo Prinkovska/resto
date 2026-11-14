@@ -165,7 +165,16 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
 .opened__dots{grid-area:3 / 1;display:flex;gap:5px;margin-top:8px}
 .opened__dots i{width:14px;height:3px;border-radius:2px;background:rgba(255,255,255,.25);transition:background .3s,width .3s}
 .opened__dots i.is-on{width:22px;background:var(--butter)}
-@media (max-width:1200px){.opened{display:none}}
+/* кнопки зв'язку в правому нижньому куті першого екрана — пара до картки «Вже відкриті» */
+.hero-contact{position:absolute;right:var(--pad);bottom:clamp(20px,4vh,40px);z-index:4;display:grid;gap:8px;width:clamp(220px,18vw,260px);padding:12px;background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.04) 45%,rgba(32,39,57,.22));border:1px solid rgba(255,255,255,.22);border-radius:14px;box-shadow:inset 0 1px 0 rgba(255,255,255,.28),0 18px 40px -18px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(14px) saturate(1.5);backdrop-filter:blur(14px) saturate(1.5);opacity:0;transform:translateY(12px);transition:opacity .7s var(--ease-out) .75s,transform .7s var(--ease-out) .75s}
+.hero.is-built .hero-contact{opacity:1;transform:none}
+.hero-contact__lbl{font:500 13px/1.2 var(--sans);color:rgba(255,255,255,.62);padding:0 2px 2px}
+.hero-contact__btn{display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:0;border-radius:10px;cursor:pointer;text-decoration:none;font:600 14.5px/1 var(--sans);transition:filter .2s,transform .2s}
+.hero-contact__btn:hover,.hero-contact__btn:focus-visible{filter:brightness(1.08);transform:translateY(-1px)}
+.hero-contact__btn--call{background:var(--brick);color:#FBF3EE}
+.hero-contact__btn--tg{background:var(--butter);color:var(--black)}
+@media (max-width:1200px){.opened,.hero-contact{display:none}}
+@media (prefers-reduced-motion:reduce){.hero-contact{opacity:1;transform:none;transition:none}}
 
 /* ---------- біжучий рядок ---------- */
 .ticker{background:var(--butter);color:var(--black);overflow:hidden;border-block:1px solid #000;position:relative;z-index:3}
@@ -655,7 +664,7 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
 .footer__legal a{color:var(--ink-soft)}
 
 /* кнопки зв'язку: на ноутбуці збоку праворуч, підпис розкривається при наведенні */
-.contact-float{position:fixed;right:18px;top:50%;z-index:40;display:grid;gap:10px;transform:translate(140%,-50%);transition:transform .45s var(--ease-out)}
+.contact-float{position:fixed;right:18px;top:50%;z-index:40;display:grid;gap:10px;transform:translate(calc(100% + 40px),-50%);transition:transform .45s var(--ease-out)}
 .contact-float.is-on{transform:translate(0,-50%)}
 .contact-float__btn{display:flex;align-items:center;justify-content:flex-end;gap:0;height:54px;min-width:54px;padding:0 16px;border-radius:999px;border:0;cursor:pointer;text-decoration:none;font:600 15px/1 var(--sans);box-shadow:0 14px 30px -12px rgba(0,0,0,.7);transition:gap .3s var(--ease-out),background .2s;margin-left:auto}
 .contact-float__btn svg{flex:none}
