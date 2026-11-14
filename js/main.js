@@ -342,7 +342,7 @@
     btns.forEach(function (b) { b.addEventListener('click', function () { set(b.dataset.premises); }); });
   })();
 
-  /* ---------- калькулятор-техкарта (суми тільки з прайсу Діми) ---------- */
+  /* ---------- калькулятор-техкарта (суми тільки з прайсу Дмитра) ---------- */
   (function calc() {
     var form = $('[data-calc]');
     if (!form) return;
