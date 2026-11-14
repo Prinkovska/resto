@@ -959,3 +959,6 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
   .who{padding-top:30px;row-gap:50px}
 }
 @media (prefers-reduced-motion:reduce){.who__card[data-reveal]{transform:rotate(var(--r,0deg))}}
+
+/* Про Дмитра: смуга Telegram ближче до ряду фото (компенсуємо великий проміжок сітки) */
+.about .cta-row--dark{margin-top:calc(28px - clamp(32px,6vw,96px))}
