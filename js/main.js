@@ -248,6 +248,16 @@
     });
   });
 
+  /* ---------- питання: кришка клоша лежить на тарілці — опускаємо її рівно на висоту заголовка ---------- */
+  (function cloche() {
+    var c = $('.faq-cloche');
+    if (!c) return;
+    function set() { var h2 = $('h2', c); if (h2) c.style.setProperty('--drop', (h2.offsetHeight + 6) + 'px'); }
+    set();
+    window.addEventListener('resize', set);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(set);
+  })();
+
   /* ---------- попап-форма ---------- */
   var modal = $('#lead-modal');
   // тексти попапу під різні кнопки; за замовчуванням — первинний прорахунок

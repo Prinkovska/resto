@@ -1029,3 +1029,32 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
   .versus::before{display:none}
   .versus__own{background:linear-gradient(180deg,rgba(34,15,11,.58),rgba(34,15,11,.46)),url("../media/tex/brick-wall-m.webp") center/420px auto}
 }
+
+/* ---------- Питання: клош лініями. Кришка лежить на тарілці, піднімається — під нею заголовок, далі по черзі питання ---------- */
+.faq-cloche[data-reveal]{opacity:1;transform:none;--drop:260px;width:min(100%,340px)}
+.faq-cloche svg{display:block;width:100%;height:auto;overflow:visible}
+.faq-cloche path{fill:none;stroke:var(--ink-dark);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.faq-cloche .cloche__shine{stroke:var(--brick);stroke-width:3}
+.cloche__lid{position:relative;z-index:2;margin-bottom:-6px;transform-origin:92% 92%;
+  transform:translateY(var(--drop));transition:transform 1.3s cubic-bezier(.22,1.2,.36,1) .35s}
+.faq-cloche.is-in .cloche__lid{transform:translateY(-22px) rotate(-7deg)}
+.faq-cloche h2{position:relative;z-index:1;padding:10px 0 6px;clip-path:inset(100% 0 0 0);transition:clip-path 1.3s cubic-bezier(.22,1,.36,1) .4s}
+.faq-cloche.is-in h2{clip-path:inset(-10% -10% -10% -10%)}
+.faq-cloche h2 .w>span{transition-delay:calc(.75s + var(--i) * 70ms)}
+.cloche__plate{margin-top:6px}
+/* питання з'являються по черзі, коли клош відкрився (де браузер не вміє :has — вони просто видимі) */
+.faq-wrap:has(.faq-cloche) .faq__item{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item{opacity:1;transform:none}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(1){transition-delay:1.2s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(2){transition-delay:1.3s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(3){transition-delay:1.4s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(4){transition-delay:1.5s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(5){transition-delay:1.6s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(6){transition-delay:1.7s}
+.faq-wrap:has(.faq-cloche.is-in) .faq__item:nth-child(n+7){transition-delay:1.8s}
+@media (max-width:820px){.faq-cloche[data-reveal]{width:min(100%,300px)}}
+@media (prefers-reduced-motion:reduce){
+  .cloche__lid,.faq-cloche.is-in .cloche__lid{transform:translateY(-22px) rotate(-7deg);transition:none}
+  .faq-cloche h2{clip-path:none;transition:none}
+  .faq-wrap:has(.faq-cloche) .faq__item{opacity:1;transform:none;transition:none}
+}
