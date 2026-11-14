@@ -879,3 +879,10 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
   .cta-addr__row .btn{width:100%}
   .cta-addr__alt{text-align:left}
 }
+
+/* заголовок блоку етапів: трохи менший, під ним «технологічна карта запуску» */
+.reel .reel__head h2{font-size:clamp(24px,2.9vw,40px)}
+.reel__head>p.reel__kicker{margin-top:6px;font:600 clamp(17px,1.6vw,22px)/1.25 var(--display);letter-spacing:-.01em;color:var(--butter)}
+
+/* без «хвостиків»: абзаци переносяться рівніше */
+p,li,dd,h3,label,blockquote{text-wrap:pretty}

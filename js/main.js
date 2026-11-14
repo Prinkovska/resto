@@ -356,8 +356,9 @@
     var feeEl = $('[data-calc-fee]', form), invEl = $('[data-calc-inv]', form), sumEl = $('[data-calc-sum]', form);
     var haveEl = $('[data-calc-have]', form), dateEl = $('[data-calc-date]', form), hidden = form.elements.calc;
     if (dateEl) dateEl.textContent = new Date().toLocaleDateString('uk-UA');
-    function fmt(n) { return '$' + Math.round(n).toLocaleString('uk-UA').replace(/ |,/g, ' '); }
-    function range(a, b) { return fmt(a) + '–' + fmt(b).slice(1); }
+    function fmt(n) { return '$' + Math.round(n).toLocaleString('uk-UA').replace(/\s|,/g, ' '); }
+    // тире з «невидимими склейками», щоб діапазон не розривався між рядками
+    function range(a, b) { return fmt(a) + '⁠–⁠' + fmt(b).slice(1); }
     var shown = { fee: 2800, a: 10000, b: 18000 }, raf = 0;
     function animateTo(p) {
       cancelAnimationFrame(raf);
