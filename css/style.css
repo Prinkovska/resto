@@ -886,3 +886,10 @@ body[data-hfont="unbounded"] .stat b{font-family:'Unbounded',sans-serif;font-siz
 
 /* без «хвостиків»: абзаци переносяться рівніше */
 p,li,dd,h3,label,blockquote{text-wrap:pretty}
+
+/* перший екран: тиха плашка зв'язку — підпис і дві круглі скляні іконки, без заливки */
+.hero-contact{display:flex;align-items:center;gap:10px;width:auto;padding:8px 8px 8px 16px;border-radius:999px}
+.hero-contact__lbl{padding:0;font:500 14px/1.2 var(--sans);color:rgba(255,255,255,.78);white-space:nowrap}
+.hero-contact__btn{justify-content:center;width:44px;height:44px;padding:0;border-radius:50%;background:rgba(255,255,255,.08);color:#F5F3F1;border:1px solid rgba(255,255,255,.26);transition:background .2s,color .2s,border-color .2s,transform .2s}
+.hero-contact__btn--call,.hero-contact__btn--tg{background:rgba(255,255,255,.08);color:#F5F3F1}
+.hero-contact__btn:hover,.hero-contact__btn:focus-visible{filter:none;transform:translateY(-1px);background:var(--butter);border-color:var(--butter);color:var(--black)}
