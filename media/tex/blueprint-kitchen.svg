@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="240" viewBox="0 0 960 240" fill="none" stroke="#161A27" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- креслення кухні в плані: тонкі лінії, плитка повторюється по горизонталі (стики на x=0 і x=960 збігаються) -->
+  <g stroke-width=".6" opacity=".35">
+    <path d="M0 40h960M0 200h960"/>
+    <path d="M0 120h960" stroke-dasharray="2 6"/>
+  </g>
+
+  <!-- стіна з дверима -->
+  <path d="M0 18h150M210 18h750M0 26h150M210 26h750"/>
+  <path d="M150 18v8M210 18v8"/>
+  <path d="M150 26a60 60 0 0 1 60 60" stroke-dasharray="3 4"/>
+  <path d="M150 26v60"/>
+
+  <!-- плита: 4 конфорки -->
+  <rect x="250" y="44" width="120" height="76" rx="3"/>
+  <circle cx="280" cy="68" r="13"/><circle cx="280" cy="68" r="6"/>
+  <circle cx="340" cy="68" r="13"/><circle cx="340" cy="68" r="6"/>
+  <circle cx="280" cy="100" r="11"/><circle cx="340" cy="100" r="11"/>
+  <!-- витяжка над плитою -->
+  <rect x="242" y="36" width="136" height="92" rx="2" stroke-dasharray="6 4" stroke-width=".8"/>
+
+  <!-- фритюр -->
+  <rect x="384" y="44" width="56" height="76" rx="3"/>
+  <rect x="392" y="54" width="40" height="26" rx="2"/><rect x="392" y="86" width="40" height="26" rx="2"/>
+
+  <!-- мийка з двома чашами -->
+  <rect x="560" y="44" width="140" height="64" rx="3"/>
+  <rect x="570" y="52" width="56" height="48" rx="8"/><rect x="634" y="52" width="56" height="48" rx="8"/>
+  <circle cx="598" cy="76" r="3"/><circle cx="662" cy="76" r="3"/>
+  <path d="M630 44v-8"/>
+
+  <!-- холодильний стіл -->
+  <rect x="740" y="44" width="170" height="64" rx="3"/>
+  <path d="M797 44v64M853 44v64"/>
+  <path d="M768 98h12M824 98h12M880 98h12"/>
+
+  <!-- острів / стіл роздачі -->
+  <rect x="300" y="160" width="300" height="44" rx="3"/>
+  <path d="M300 172h300" stroke-width=".7"/>
+  <circle cx="340" cy="190" r="6"/><circle cx="372" cy="190" r="6"/><circle cx="404" cy="190" r="6"/>
+  <path d="M470 180h90M470 192h90" stroke-width=".7"/>
+
+  <!-- піч (конвектомат) -->
+  <rect x="40" y="150" width="80" height="62" rx="3"/>
+  <rect x="50" y="160" width="60" height="42" rx="2"/>
+  <path d="M58 170h44M58 180h44M58 190h44" stroke-width=".7"/>
+
+  <!-- шафа / стелаж -->
+  <rect x="700" y="160" width="200" height="40" rx="2"/>
+  <path d="M750 160v40M800 160v40M850 160v40"/>
+  <path d="M710 180h30M760 180h30M810 180h30M860 180h30" stroke-width=".7"/>
+
+  <!-- розмірні лінії -->
+  <g stroke-width=".8">
+    <path d="M250 136h190M250 131v10M440 131v10"/>
+    <path d="M246 140l8-8M436 140l8-8"/>
+    <path d="M560 124h350M560 119v10M910 119v10"/>
+    <path d="M556 128l8-8M906 128l8-8"/>
+    <path d="M930 44v64M925 44h10M925 108h10"/>
+    <path d="M300 222h300M300 217v10M600 217v10"/>
+  </g>
+  <g fill="#161A27" stroke="none" font-family="ui-monospace,Consolas,monospace" font-size="10" letter-spacing=".5">
+    <text x="322" y="133">1900</text>
+    <text x="712" y="121">3500</text>
+    <text x="436" y="219">3000</text>
+    <text x="937" y="80">650</text>
+    <text x="256" y="56" font-size="8">ПЛИТА</text>
+    <text x="566" y="118" font-size="8">МИЙКА</text>
+    <text x="746" y="56" font-size="8">ХОЛОД</text>
+    <text x="46" y="224" font-size="8">ПІЧ</text>
+    <text x="306" y="156" font-size="8">РОЗДАЧА</text>
+  </g>
+
+  <!-- маршрут кухаря -->
+  <path d="M310 128c40 30 120 30 180 0s110-30 140-20" stroke-dasharray="1 5" stroke-width="1.6"/>
+  <path d="M624 104l8 5-9 3"/>
+</svg>
