@@ -922,7 +922,8 @@ p,li,dd,h3,label,blockquote{text-wrap:pretty}
 
 /* смуга «Потрібна лише частина?»: фон — фото цегляної стіни замість дудлів */
 .band.band--doodle{background:#E9A866 url("../media/tex/brick-wall.webp") center/cover no-repeat}
-.band--doodle::before{background:linear-gradient(90deg,rgba(250,207,130,.55),rgba(250,207,130,.15) 70%,transparent);opacity:1}
+/* цегла висвітлена в тон жовтої кнопки (--butter): рівна жовта вуаль, зліва трохи щільніша під текст */
+.band--doodle::before{background:linear-gradient(90deg,rgba(250,207,130,.8),rgba(250,207,130,.6) 60%,rgba(250,207,130,.5));opacity:1}
 @media (max-width:760px){.band.band--doodle{background-image:url("../media/tex/brick-wall-m.webp")}}
 
 /* ---------- «Кому»: картки — чеки замовлень на кухонній рейці, кожна на прищепці ---------- */
